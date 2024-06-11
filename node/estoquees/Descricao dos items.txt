@@ -1,0 +1,45 @@
+Descricao dos items
+model Material {
+  name     String - Nome do material (cabo, adaptador, memória 2GB, memória 4GB, processador, etc...)
+  type     String - Tipo do material (VGA, Força, Sata, DDR3)
+  model    String - Modelo do material (Cat5, VGA, K5108, i3 3400, 1.5 Metros)
+  brand    String - Marca do material (Positivo, Dell, LG, Samsung, etc...)
+  status   String - Estado atual do material (Não verificado, inservível, disponível)
+  quantity Int - Quantidade
+  details  String? - Observações referentes ao material (Quebrados, amassados, reserva, queimado, etc...)
+}
+
+model Equipment {
+  name      String - Nome do Equipamento (Computador, Notebook, Monitor, Teclado, Mouse, Estabilizador)
+  type      String - Tipo de equipamento (i5 4GB 500gb, LCD 19, USB, 0.5kva)
+  model     String - Modelo do equipamento (Optiplex 7010, Flatron 19, K5108)
+  brand     String - Marca do equipamento (Positivo, Dell, LG, Samsung, etc...)
+  serial    String - Número de série
+  status    String - Estado atual do equipamento (Não verificado, inservível, disponível, em verificação)
+  patrimony String?
+  contract  String?
+  details   String? - Observações referentes ao equipamento (Quebrados, amassados, reserva, queimado, etc...)
+}
+
+"items": [
+    {      
+      "name": "Computador Core i5 4Gb 500gb",
+      "type": "Desktop",
+      "model": "POS14223",
+      "brand": "Positivo",
+      "serial": "654321",
+      "status": "Não verificado",
+      "patrimony": "55521544",
+      "contract": null,
+      "details": "Gabinete amassado",      
+    },
+    {      
+      "name": "Cabo VGA",
+      "type": "Cabos",
+      "model": "VGA",
+      "brand": "Generico",
+      "status": "nenhum",
+      "quantity": 15,
+      "details": "",      
+    }
+  ]

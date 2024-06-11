@@ -1,0 +1,20 @@
+Roadmap projeto REACT
+
+1 - Preparar o ambiente (Nodejs, VSCode, Extensões)
+
+2 - Criar o projeto com o comando npm create vite@latest
+3 - acessar o diretório do projeto
+4 - Remover arquivos desnecessários (Readme, assets, importações)
+5 - instalar as dependências: npm i
+6 - alterar a exportação do arquivo App.tsx
+7 - reiniciar o servidor Typescript: ctrl + shift + p restart TS server
+8 - iniciar o projet com npm run dev
+9 - remover o conteúdo do arquivo index.css
+9.1 - seguir a instalação com base no https://tailwindcss.com/docs/guides/vite
+10 - instalar o Tailwindcss: npm i tailwindcss postcss autoprefixer -D
+11 - inicializar o tailwindcss: npx tailwindcss init -p
+12 - adicionar os códigos e estilizações necessárias
+13 - utilizar a biblioteca LUCIDE para icones: npm i lucide-react
+14 - Adicionar o plugon de Forms do Tailwindcss: npm i @tailwindcss/forms -D
+15 - Adicionar o require do plugin no arquivo tailwind.config.js
+16 - Instalar o tailwind-merge: npm i tailwind-merge

@@ -1,0 +1,31 @@
+Roadmap do projeto
+
+1 - Criação do diretório de armazenamento do projeto
+2 - Criação do arquivo README.md contendo os requisitos do projeto
+3 - Inicialização do projeto: npm init -y
+4 - criação do diretório src e do arquivo principal server.js
+5 - instalação das dependdências de desenvolvimento Typescript: npm i typescript @types/node -D
+6 - Renomear o arquivo principal para server.ts
+7 - Inicializar o typescript: npx tsc --init
+8 - Copiar as configurações recomendadas para a versão do node a partir do endereço: https://github.com/tsconfig/bases
+9 - Adicionar o caminho dos diretórios com os arquivos typescript no arquivo tsconfig.json: "include": ["src"]
+10 - Instalar o tsx como dependência de desenvolvimento: npm i tsx -D
+11 - Criar o script de desenvolvimento no arquivo package.json: "dev": "tsx watch src/server.ts"
+12 - Executar o script: npm run dev
+13 - Instalar o micro framework fastify: npm i fastify
+14 - Importar o framework no arquivo server.ts e declarar as instruções
+15 - Instalar o ORM Prisma: npm i prisma -D
+15.1 - Verificar se a dependencia @prisma/client foi instalada, caso contrário, instalar.
+16 - Inicializar o prisma: npx prisma init --datasource-provider SQLIte
+17 - adicionar o env no script dev: --env-file .env
+18 - Adicionar a extensão Prisma no VSCode (adicionar no arquivo de configuração a linha "[prisma]":{"editor.formatOnSave":true})
+19 - Adicionar a extensão REST Client no VSCode
+20 - Preencher o arquivo schema.prisma com os dados necessários e realizar o migrate: npx prisma migrate dev
+21 - Para verificar a estrutura do banco: npx prisma studio
+22 - Para testar as rotas, crie um arquivo com a extensão .http e preenche os dados da requisição
+23 - Instalar a biblioteca de validações: npm i zod
+24 - Instalar a biblioteca: npm i fastify-type-provider-zod
+25 - Criar o arquivo de conexão com o ORM lib/prisma.ts
+26 - Separar as rotas do arquivo principal
+27 - Cuidado ao importar o arquivo APP nas rotas para não gerar a dependência cíclica
+28 - Criar a rota de criação de armazenamentos e testar com o REST Client

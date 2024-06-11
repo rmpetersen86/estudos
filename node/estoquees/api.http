@@ -1,0 +1,138 @@
+@baseUrl = http://localhost:3333
+
+POST http://localhost:3333/storages
+Content-Type: application/json
+
+{
+  "name": "Almoxarifado DGI",
+  "location": "Atrás do CVT Quintino",
+  "details": "Pegar a chave no claviculário da DGI"
+}
+
+###
+POST http://localhost:3333/storages/1/places
+Content-Type: application/json
+
+{
+  "name": "Ante sala de Equipamentos",
+  "location": "Segundo andar",
+  "details": ""
+}
+
+###
+POST http://localhost:3333/places/2b28694d-5007-434f-85f7-81292cb234dc/materials
+Content-Type: application/json
+
+{
+  "name": "Conector",
+  "type": "Rede",
+  "model": "Keystone RJ45",
+  "brand": "Generico",
+  "status": "nenhum",
+  "quantity": 12,
+  "details": ""
+}
+
+###
+POST http://localhost:3333/places/fe0f2597-e8e8-4063-9c30-e32035314dec/equipments
+Content-Type: application/json
+
+{
+  "name": "Computador Core i5 4Gb 500gb",
+  "type": "Desktop",
+  "model": "POS14223",
+  "brand": "Positivo",
+  "serial": "654321",
+  "status": "Não verificado",
+  "patrimony": "55521544",  
+  "details": "Gabinete amassado"
+}
+
+###
+POST http://localhost:3333/movements
+Content-Type: application/json
+
+{  
+  "type": "Entrada",
+  "origin": "ETE República",
+  "destiny": "Almoxarifado DGI",
+  "responsible": "Rafael Petersen",
+  "contact": "(21) 99858-7788",
+  "equipments": [    
+    "2ce9e98d-006d-4760-96a6-84d95b30d8ca",        
+    "bbf9649e-4158-431f-a98c-c63f0b5a0c6c" 
+    ]
+}
+
+###
+POST http://localhost:3333/movements
+Content-Type: application/json
+
+{  
+  "type": "Entrada",
+  "origin": "ETE República",
+  "destiny": "Almoxarifado DGI",
+  "responsible": "Rafael Petersen",
+  "contact": "(21) 99858-7788",
+  "equipments": [
+    {
+    "id": "2ce9e98d-006d-4760-96a6-84d95b30d8ca",
+    "name": "Computador Core i5 4Gb 500gb",
+    "type": "Desktop",
+    "model": "POS14223",
+    "brand": "Positivo",
+    "serial": "12345678",
+    "status": "Não verificado",
+    "patrimony": "55521544",
+    "contract": null,
+    "details": "Gabinete amassado"
+    },{
+      "id": "bbf9649e-4158-431f-a98c-c63f0b5a0c6c",
+    "name": "Computador Core i5 4Gb 500gb",
+    "type": "Desktop",
+    "model": "POS14223",
+    "brand": "Positivo",
+    "serial": "12345678",
+    "status": "Não verificado",
+    "patrimony": "55521544",
+    "contract": null,
+    "details": "Gabinete amassado"
+    }
+    ]
+}
+
+###
+GET {{baseUrl}}/storages/1
+
+###
+GET {{baseUrl}}/storages/2/places
+
+###
+GET {{baseUrl}}/storages
+
+###
+GET {{baseUrl}}/places
+
+###
+GET http://localhost:3333/places/ba81361b-a8af-4492-aaf5-9c5385cbeeff
+
+###
+GET http://localhost:3333/materials
+
+###
+GET http://localhost:3333/materials/1
+
+###
+GET {{baseUrl}}/equipments
+
+###
+GET {{baseUrl}}/equipments?query=5552154
+
+###
+GET {{baseUrl}}/equipments/c2b95966-c066-4dba-bca7-c55d1f66e843
+
+###
+GET {{baseUrl}}/items
+
+###
+DELETE {{baseUrl}}/storages/8
