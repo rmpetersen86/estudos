@@ -13,7 +13,13 @@ interface Item {
   name: string
   type: string
   model: string
+  brand: string
+  serial: string
+  patrimony: string
+  contract: string
   status: string
+  place: string
+  storage: string
 }
 
 export function ItemsList(){
@@ -56,7 +62,6 @@ export function ItemsList(){
       return 0
     }))
     setTotal(data.total)
-    console.log(data.items)
   }
 
   function setCurrentSearch(search: string){
@@ -123,8 +128,9 @@ export function ItemsList(){
             </TableHeader>
             <TableHeader>Item</TableHeader>
             <TableHeader>Tipo</TableHeader>
-            <TableHeader>Modelo</TableHeader>
+            <TableHeader>Identificação</TableHeader>
             <TableHeader>Status</TableHeader>
+            <TableHeader>Localização</TableHeader>
             <TableHeader>Tipo de Item</TableHeader>
             <TableHeader style={{width: 64}}>Detalhes</TableHeader>
           </tr>
@@ -139,12 +145,22 @@ export function ItemsList(){
                 <TableCell>{item.name}</TableCell>
                 <TableCell>
                   <div className="flex flex-col gap1">
-                    <span className="font-semibold text-white">{item.model}</span>
-                    <span>{item.type}</span>
+                    <span className="font-semibold text-white">{item.type}</span>
+                    <span>{item.model}</span>
                   </div>
                 </TableCell>
-                <TableCell>{item.model}</TableCell>
+                <TableCell>
+                  <div className="flex flex-col gap1">
+                    <span className="font-semibold text-white">{item.serial && "S/N: " + item.serial}</span>
+                    <span>{item.patrimony && "Pat: " + item.patrimony} {item.contract && "C: " + item.contract}</span>
+                  </div></TableCell>
                 <TableCell>{item.status}</TableCell>
+                <TableCell>
+                  <div className="flex flex-col gap1">
+                    <span className="font-semibold text-white">{item.storage}</span>
+                    <span>{item.place}</span>
+                  </div>
+                </TableCell>
                 <TableCell>{(item.id.toString().length === 36) ? 'Equipamento' : 'Material'}</TableCell>
                 <TableCell>                  
                   <IconButton transparent>                    
