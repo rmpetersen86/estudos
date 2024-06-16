@@ -1,0 +1,36 @@
+@baseUrl = http://localhost:3333
+
+POST {{baseUrl}}/storages
+Content-Type: application/json
+
+{
+  "name": "Loja",
+  "location": "Estoque da Loja",
+  "details": ""
+}
+
+###
+POST {{baseUrl}}/storages/1/places
+Content-Type: application/json
+
+{
+  "name": "Estante 1",
+  "location": "Estante ao lado da porta do estoque",
+  "details": ""
+}
+
+###
+POST {{baseUrl}}/places/2b179f12-d15a-40ae-9173-6500b219e050/items
+Content-Type: application/json
+
+{
+  "name": "Camiseta Branca Sublimática M",
+  "type": "Camiseta",
+  "model": "Gola careca Manga curta",
+  "brand": "Verzzolo",
+  "ammount": 12,
+  "details": ""
+}
+
+###
+GET {{baseUrl}}/items
